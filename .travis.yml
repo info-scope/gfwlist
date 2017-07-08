@@ -14,5 +14,5 @@ after_script:
   - git config user.email "infoscope@qq.com"
   - git add .
   - git commit -m "merge with gfwlist"
-  - git push --quiet "https://${GH_TOKEN}@github.com/info-scope/gfwlist.git" master:master
+  - git push --force --quiet "https://${GH_TOKEN}@github.com/info-scope/gfwlist.git" master:master
 # E: Build LifeCycle
