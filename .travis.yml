@@ -1,1 +1,18 @@
 
+language: node_js
+node_js: stable
+branches:
+  only:
+    - master    
+# S: Build Lifecycle
+before_install:
+  - wget https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+script:
+  - npm start
+after_script:
+  - git config user.name "infoscope"
+  - git config user.email "infoscope@qq.com"
+  - git add .
+  - git commit -m "merge with gfwlist"
+  - git push --quiet "https://${GH_TOKEN}@gfwlist" master:master
+# E: Build LifeCycle
